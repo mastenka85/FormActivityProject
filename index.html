@@ -329,22 +329,26 @@ footer{
         <label for="fullName">Full Name (First and Last) <span class="required">*</span></label>
         <input type="text" id="fullName" name="fullName" required>
         
-       <fieldset>
+      <!-- Preferred Contact Method -->
+<fieldset>
     <legend>Preferred Contact Method <span class="required">*</span></legend>
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <label for="contactEmail">
+    
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <!-- Email Option -->
+        <label style="display: flex; align-items: center;">
             <input type="radio" id="contactEmail" name="contactMethod" value="email" required>
-            Email
+            <span>Email</span>
         </label>
-        <input type="email" id="email" name="email" placeholder="Email Address" required style="margin-right: 20px;">
-
-        <label for="contactPhone">
+        <input type="email" id="email" name="email" placeholder="Email Address" required style="width: 200px;">
+        
+        <!-- Phone Option -->
+        <label style="display: flex; align-items: center;">
             <input type="radio" id="contactPhone" name="contactMethod" value="phone">
-            Phone
+            <span>Phone</span>
         </label>
-        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" style="width: 200px;">
     </div>
-        </fieldset>
+</fieldset>
         
         <!-- State Selection Dropdown -->
         <label for="state">State of Residence <span class="required">*</span></label>
