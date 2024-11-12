@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">	
+	<meta charset="utf-8">
 	<meta name="author" content="Anastasiya Mlynchyk">
 	<title>Form Activity Solution File</title>
 	<link rel="stylesheet" href="style.css">
@@ -57,16 +57,21 @@ form label {
 	font-weight: bold;
 }
 
+form .contact-option {
+	display: flex;
+	align-items: center;
+	margin-right: 1em;
+}
+
 form input[type="text"],
 form input[type="email"],
 form input[type="tel"] {
-	flex: 1;
-	margin-left: 0.5em;
 	padding: 0.5em;
+	margin-left: 0.5em;
 }
 
 form input[type="radio"] {
-	margin-right: 0.5em;
+	margin-right: 0.3em;
 }
 
 footer {
@@ -112,12 +117,12 @@ input[type="submit"]:hover {
 
 			<div class="row">
 				<label for="contactMethod">Preferred Contact Method <span class="required">*</span></label>
-				<div>
+				<div class="contact-option">
 					<input type="radio" id="contactEmail" name="contactMethod" value="email" required>
 					<label for="contactEmail">Email</label>
 					<input type="email" id="email" name="email" placeholder="Email Address">
 				</div>
-				<div>
+				<div class="contact-option">
 					<input type="radio" id="contactPhone" name="contactMethod" value="phone">
 					<label for="contactPhone">Phone</label>
 					<input type="tel" id="phone" name="phone" placeholder="Phone Number">
