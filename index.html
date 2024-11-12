@@ -329,25 +329,21 @@ footer{
         <label for="fullName">Full Name (First and Last) <span class="required">*</span></label>
         <input type="text" id="fullName" name="fullName" required>
         
-        <!-- Email Field -->
-        <label for="email">Email Address <span class="required">*</span></label>
-        <input type="email" id="email" name="email" required>
-        
-        <!-- Phone Number Field -->
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone">
-        
-        <!-- Preferred Contact Method -->
-        <fieldset>
-          <legend>Preferred Contact Method <span class="required">*</span></legend>
-          <label for="contactEmail">
+       <fieldset>
+    <legend>Preferred Contact Method <span class="required">*</span></legend>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <label for="contactEmail">
             <input type="radio" id="contactEmail" name="contactMethod" value="email" required>
             Email
-          </label>
-          <label for="contactPhone">
+        </label>
+        <input type="email" id="email" name="email" placeholder="Email Address" required style="margin-right: 20px;">
+
+        <label for="contactPhone">
             <input type="radio" id="contactPhone" name="contactMethod" value="phone">
             Phone
-          </label>
+        </label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+    </div>
         </fieldset>
         
         <!-- State Selection Dropdown -->
