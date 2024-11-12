@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,6 +91,9 @@ a:hover{
 header{
 	padding: 2em 0 1em 0;
 	border-bottom: 5px solid #0a58ff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 h1, h2, h3{
@@ -114,20 +116,20 @@ h1{
 	margin: -1px;
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
-	white-space: nowrap; /* added line */
+	white-space: nowrap;
 	border: 0; 
 }
 
 nav ul{
+	display: flex;
 	width: 100%;
 	max-width: 800px;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	justify-content: space-around;
+	padding: 0;
 }
 
 ul li{
-	display: inline-block;
+	list-style-type: none;
 }
 
 nav a{
@@ -151,7 +153,7 @@ nav a{
 }
 
 main{
-	width: calc(100% - 2em);
+	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 1em;
@@ -178,6 +180,8 @@ h3{
 }
 
 form{
+	display: flex;
+	flex-direction: column;
 	width: 90%;
 	max-width: 350px;
 	margin:  2em auto;
@@ -186,9 +190,10 @@ form{
 	border-radius: 0.2em;
 }
 
-input, label, textarea{
+input, label, textarea, select{
 	display: block;
-	width: calc(100% - 2em);
+	width: 100%;
+	margin: 0.25em 0;
 }
 
 input, textarea, select{
@@ -206,8 +211,6 @@ label{
 }
 
 input{
-	width: 90%;
-	margin: 0.25em auto 0.5em auto;
 	padding: 0.5em;
 }
 
@@ -216,19 +219,7 @@ input:focus, select:focus, textarea:focus{
 	box-shadow: 0 0 0 0.09em currentColor;
 }
 
-input:error, select:error, textarea:error{
-	background-color: #c71819;
-}
-
 fieldset{
-	margin: 0.5em auto;
-	padding-bottom: 0.5em;
-	width: 94%;
-	border: 1px solid #222;
-	border-radius: 0.2em;
-	display: grid;
-	grid-template-columns: 100px 1fr 100px 1fr;
-	
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -243,7 +234,7 @@ legend{
 
 fieldset label{
 	display: inline;
-	width: 60%;
+	width: 100%;
 }
 
 fieldset input{
@@ -252,15 +243,11 @@ fieldset input{
 }
 
 select{
-	display: block;
-	width: 95%;
-	margin: 0.25em auto 0.5em auto;
 	padding: 0.5em;
 	font-size: 1em;
 }
 
 textarea{
-	width: 90%;
 	height: 100px;
 	margin: 0.25em auto 0.5em auto;
 	padding: 0.5em;
@@ -275,7 +262,7 @@ input[type="radio"]{
 
 input[type="submit"]{
 	font-size: 1.2em;
-	width: 95%;
+	width: 100%;
 	margin-top: 1em;
 	padding: 0.5em;
 	border: none;
@@ -291,13 +278,14 @@ input[type="submit"]:hover, input[type="submit"]:focus{
 }
 
 footer{
+	display: flex;
+	justify-content: center;
 	padding: 1em;
 	border-top: 5px solid #0a58ff;
 	font-family: sans-serif;
 	text-align: center;
 }
 </style>
-
 </head>
 <body>
 	<a href="#main-content" id="skipLink">Skip to main content</a>
@@ -319,44 +307,32 @@ footer{
 			<h2>Coding Semantic and Accessible Forms!</h2>
 			<p>Today we'll be focusing on coding a form that is accessible and semantic, and we'll also briefly discuss skip links for your website. Forms can be a source of frustration for users, whether they specifically need help with accessing your website or if they just prefer that your forms be easy to use and submit. Follow along as we code this in class, and please ask questions as they arise. Let's make a form!</p>
 
-<!-- 	-------- TO-DO: ADD FORM CODE HERE DURING CLASS, FOLLOW ALONG TO COMPLETE -------- -->
+			<!-- 	-------- TO-DO: ADD FORM CODE HERE DURING CLASS, FOLLOW ALONG TO COMPLETE -------- -->
 		</article>
 	</main>
 	<footer>
 		<p>Copyright &copy; 2021 - GIT414</p>
 	</footer>
-<body>
-  <!-- Other content here, such as header, main content, etc. -->
-  
-  <main id="main-content">
-    <article>
-      <h2>Contact Form</h2>
-      <form action="https://wp.zybooks.com/form-viewer.php" method="POST">
-        
-        <!-- Full Name Field -->
-        <label for="fullName">Full Name (First and Last) <span class="required">*</span></label>
-        <input type="text" id="fullName" name="fullName" required>
-        
-        <!-- Email Field -->
-        <label for="email">Email Address <span class="required">*</span></label>
-        <input type="email" id="email" name="email" required>
-        
-        <!-- Phone Number Field -->
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone">
-        
-        <!-- Preferred Contact Method -->
-        <fieldset>
-          <legend>Preferred Contact Method <span class="required">*</span></legend>
-          <label for="contactEmail">
-            <input type="radio" id="contactEmail" name="contactMethod" value="email" required>
-            Email
-          </label>
-          <label for="contactPhone">
-            <input type="radio" id="contactPhone" name="contactMethod" value="phone">
-            Phone
-          </label>
-        </fieldset>
+
+	<main id="main-content">
+		<article>
+			<h2>Contact Form</h2>
+			<form action="https://wp.zybooks.com/form-viewer.php" method="POST">
+				<!-- Full Name Field -->
+				<label for="fullName">Full Name (First and Last) <span class="required">*</span></label>
+				<input type="text" id="fullName" name="fullName" required>
+
+				<!-- Email Field -->
+				<label for="email">Email Address <span class="required">*</span></label>
+				<input type="email" id="email" name="email" required>
+
+				<!-- Phone Number Field -->
+				<label for="phone">Phone Number</label>
+				<input type="tel" id="phone" name="phone">
+
+				<!-- Preferred Contact Method -->
+				<fieldset>
+
         
         <!-- State Selection Dropdown -->
         <label for="state">State of Residence <span class="required">*</span></label>
